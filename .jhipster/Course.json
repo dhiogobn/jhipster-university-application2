@@ -1,0 +1,48 @@
+{
+  "applications": ["myApp"],
+  "changelogDate": "20220331205711",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "course",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "duration",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Course",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "student",
+      "otherEntityRelationshipName": "course",
+      "relationshipName": "students",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "discipline",
+      "otherEntityRelationshipName": "courses",
+      "ownerSide": false,
+      "relationshipName": "disciplines",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "teacher",
+      "otherEntityRelationshipName": "courses",
+      "ownerSide": false,
+      "relationshipName": "teachers",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

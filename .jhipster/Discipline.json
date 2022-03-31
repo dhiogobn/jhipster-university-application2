@@ -1,0 +1,51 @@
+{
+  "applications": ["myApp"],
+  "changelogDate": "20220331205708",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "discipline",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "credits",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Discipline",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "course",
+      "otherEntityRelationshipName": "disciplines",
+      "ownerSide": true,
+      "relationshipName": "courses",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "teacher",
+      "otherEntityRelationshipName": "disciplines",
+      "relationshipName": "teacher",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "student",
+      "otherEntityRelationshipName": "disciplines",
+      "ownerSide": false,
+      "relationshipName": "students",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

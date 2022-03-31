@@ -1,0 +1,27 @@
+{
+  "myApp": {
+    "classRoom": {
+      "home": {
+        "title": "Class Rooms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Class Room",
+        "createOrEditLabel": "Create or edit a Class Room",
+        "notFound": "No Class Rooms found"
+      },
+      "created": "A new Class Room is created with identifier {{ param }}",
+      "updated": "A Class Room is updated with identifier {{ param }}",
+      "deleted": "A Class Room is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Class Room {{ id }}?"
+      },
+      "detail": {
+        "title": "Class Room"
+      },
+      "id": "ID",
+      "number": "Number",
+      "capacity": "Capacity",
+      "students": "Students",
+      "teacher": "Teacher"
+    }
+  }
+}

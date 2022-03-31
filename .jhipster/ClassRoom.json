@@ -1,0 +1,39 @@
+{
+  "applications": ["myApp"],
+  "changelogDate": "20220331205710",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "class_room",
+  "fields": [
+    {
+      "fieldName": "number",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "capacity",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ClassRoom",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "student",
+      "otherEntityRelationshipName": "classRoom",
+      "relationshipName": "students",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "teacher",
+      "otherEntityRelationshipName": "classRoom",
+      "ownerSide": false,
+      "relationshipName": "teacher",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "no"
+}

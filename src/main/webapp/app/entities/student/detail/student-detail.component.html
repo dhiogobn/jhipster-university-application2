@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="student">
+      <h2 data-cy="studentDetailsHeading"><span jhiTranslate="myApp.student.detail.title">Student</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ student.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.student.cpf">Cpf</span></dt>
+        <dd>
+          <span>{{ student.cpf }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.student.birthDate">Birth Date</span></dt>
+        <dd>
+          <span>{{ student.birthDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.student.name">Name</span></dt>
+        <dd>
+          <span>{{ student.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.student.disciplines">Disciplines</span></dt>
+        <dd>
+          <span *ngFor="let disciplines of student.disciplines; let last = last">
+            <a [routerLink]="['/discipline', disciplines?.id, 'view']">{{ disciplines.name }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+        <dt><span jhiTranslate="myApp.student.teachers">Teachers</span></dt>
+        <dd>
+          <span *ngFor="let teachers of student.teachers; let last = last">
+            <a [routerLink]="['/teacher', teachers?.id, 'view']">{{ teachers.name }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+        <dt><span jhiTranslate="myApp.student.classRoom">Class Room</span></dt>
+        <dd>
+          <div *ngIf="student.classRoom">
+            <a [routerLink]="['/class-room', student.classRoom?.id, 'view']">{{ student.classRoom?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="myApp.student.course">Course</span></dt>
+        <dd>
+          <div *ngIf="student.course">
+            <a [routerLink]="['/course', student.course?.id, 'view']">{{ student.course?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/student', student.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
