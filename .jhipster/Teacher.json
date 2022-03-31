@@ -1,0 +1,63 @@
+{
+  "applications": ["myApp"],
+  "changelogDate": "20220331205709",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "teacher",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "specialization",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Teacher",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "classRoom",
+      "otherEntityRelationshipName": "teacher",
+      "ownerSide": true,
+      "relationshipName": "classRoom",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "discipline",
+      "otherEntityRelationshipName": "teacher",
+      "relationshipName": "disciplines",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "course",
+      "otherEntityRelationshipName": "teachers",
+      "ownerSide": true,
+      "relationshipName": "courses",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "student",
+      "otherEntityRelationshipName": "teachers",
+      "ownerSide": false,
+      "relationshipName": "students",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

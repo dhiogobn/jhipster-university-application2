@@ -1,0 +1,57 @@
+{
+  "applications": ["myApp"],
+  "changelogDate": "20220331205707",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "student",
+  "fields": [
+    {
+      "fieldName": "cpf",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "birthDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Student",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "discipline",
+      "otherEntityRelationshipName": "students",
+      "ownerSide": true,
+      "relationshipName": "disciplines",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "teacher",
+      "otherEntityRelationshipName": "students",
+      "ownerSide": true,
+      "relationshipName": "teachers",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "classRoom",
+      "otherEntityRelationshipName": "students",
+      "relationshipName": "classRoom",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "course",
+      "otherEntityRelationshipName": "students",
+      "relationshipName": "course",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

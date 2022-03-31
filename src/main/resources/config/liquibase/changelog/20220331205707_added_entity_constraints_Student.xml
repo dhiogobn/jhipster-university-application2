@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity Student.
+    -->
+    <changeSet id="20220331205707-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="student_id"
+                                 baseTableName="rel_student__disciplines"
+                                 constraintName="fk_rel_student__disciplines__student_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="student"/>
+
+        <addForeignKeyConstraint baseColumnNames="disciplines_id"
+                                 baseTableName="rel_student__disciplines"
+                                 constraintName="fk_rel_student__disciplines__disciplines_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="discipline"/>
+
+        <addForeignKeyConstraint baseColumnNames="student_id"
+                                 baseTableName="rel_student__teachers"
+                                 constraintName="fk_rel_student__teachers__student_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="student"/>
+
+        <addForeignKeyConstraint baseColumnNames="teachers_id"
+                                 baseTableName="rel_student__teachers"
+                                 constraintName="fk_rel_student__teachers__teachers_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="teacher"/>
+
+        <addForeignKeyConstraint baseColumnNames="class_room_id"
+                                 baseTableName="student"
+                                 constraintName="fk_student__class_room_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="class_room"/>
+
+        <addForeignKeyConstraint baseColumnNames="course_id"
+                                 baseTableName="student"
+                                 constraintName="fk_student__course_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="course"/>
+    </changeSet>
+</databaseChangeLog>
