@@ -1,0 +1,59 @@
+
+application {
+  config {
+    baseName myApp,
+    applicationType monolith,
+    packageName com.myapp,
+    authenticationType jwt,
+    prodDatabaseType mysql,
+    clientFramework angular
+  }
+  entities *
+}
+
+entity Student {
+    cpf String,
+    birthDate ZonedDateTime,
+    name String
+
+}
+
+entity Discipline {
+    name String,
+    credits String,
+    phone String
+}
+
+entity Teacher {
+	name String,
+    address String,
+    phone String,
+    specialization String
+}
+
+entity ClassRoom{
+    number String,
+    capacity String
+}
+
+entity Course{
+    name String,
+    duration String
+}
+
+relationship OneToMany {
+  ClassRoom{students(name)} to Student
+  Course{students(name)} to Student
+  Teacher{disciplines(name)} to Discipline
+}
+
+relationship ManyToMany{
+	Student{disciplines(name)} to Discipline{students(name)}
+    Student{teachers(name)} to Teacher{students(name)}
+    Discipline{courses(name)} to Course{disciplines(name)}
+    Teacher{courses(name)} to Course{teachers(name)}
+}
+
+relationship OneToOne{
+	Teacher to ClassRoom
+}
